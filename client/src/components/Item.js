@@ -25,6 +25,7 @@ function Item(props) {
       .then(res => {
         console.log(`bk: Item.jd: handleGelete: res: `, res);
         props.setItems(res.data);
+        push('/item-list');
       })
       .catch(err => console.error(err));
     // update app state
