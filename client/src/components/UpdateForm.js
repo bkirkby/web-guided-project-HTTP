@@ -48,7 +48,7 @@ const UpdateForm = props => {
         // props.setItems(res.data);
         const itemReturned = res.data.find(itm => itm.id === id);
         props.setItems(props.items.map(itm => {
-          if (itm.id === itemReurned) {
+          if (itm.id === itemReturned) {
             return itemReturned;
           }
           return itm;
