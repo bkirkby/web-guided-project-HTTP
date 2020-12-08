@@ -44,7 +44,7 @@ function Item(props) {
         path="/item-list/:id/shipping"
         render={props => <ItemShipping {...props} item={item} />}
       />
-      <button className="md-button">
+      <button className="md-button" onClick={() => push(`/update-item/${item.id}`)}>
         Edit
       </button>
       <button className="md-button">
