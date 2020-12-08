@@ -45,6 +45,7 @@ const UpdateForm = props => {
       .then(res => {
         // setState()
         console.log(`bk: Updateform.js: handleSubmit: res: `, res);
+        props.setItems(res.data);
       })
       .catch(err => console.error(err));
   };
