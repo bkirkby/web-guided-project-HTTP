@@ -41,7 +41,7 @@ const UpdateForm = props => {
     e.preventDefault();
     // make a PUT request to edit the item
     const url = `http://localhost:3333/items/${id}`;
-    axios.put(url)
+    axios.put(url, item)
       .then(res => {
         // setState()
         console.log(`bk: Updateform.js: handleSubmit: res: `, res);
