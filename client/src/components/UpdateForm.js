@@ -46,13 +46,13 @@ const UpdateForm = props => {
         // setState()
         console.log(`bk: Updateform.js: handleSubmit: res: `, res);
         props.setItems(res.data);
-        // const itemReturned = res.data.find(itm => itm.id === id);
-        // props.setItems(props.items.map(itm => {
-        //   if (itm.id === itemReturned.id) {
-        //     return itemReturned;
-        //   }
-        //   return itm;
-        // }));
+        const itemReturned = res.data.find(itm => itm.id == id);
+        props.setItems(props.items.map(itm => {
+          if (itm.id === itemReturned.id) {
+            return itemReturned;
+          }
+          return itm;
+        }));
       })
       .catch(err => console.error(err));
   };
