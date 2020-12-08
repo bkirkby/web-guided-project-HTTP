@@ -24,6 +24,7 @@ function Item(props) {
     axios.delete(`http://localhost:3333/items/${item.id}`)
       .then(res => {
         console.log(`bk: Item.jd: handleGelete: res: `, res);
+        props.setItems(res.data);
       })
       .catch(err => console.error(err));
     // update app state
