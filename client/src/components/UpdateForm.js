@@ -53,6 +53,7 @@ const UpdateForm = props => {
           }
           return itm;
         }));
+        push(`/item-list/${id}`);
       })
       .catch(err => console.error(err));
   };
