@@ -17,7 +17,10 @@ const UpdateForm = props => {
 
   useEffect(() => {
     axios.get(`http://localhost:3333/itemById/${id}`)
-      .then(res => setItem(res.data))
+      .then(res => {
+        // morphing of data
+        setItem(res.data);
+      })
       .catch(err => console.error(err));
   }, [id]);
 
