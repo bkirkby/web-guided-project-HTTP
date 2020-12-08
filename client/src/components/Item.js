@@ -18,6 +18,12 @@ function Item(props) {
     return <h2>Loading item data...</h2>;
   }
 
+  const handleDelete = (e) => {
+    e.preventDefault();
+    // call axios
+    // update app state
+  }
+
   return (
     <div className="item-wrapper">
       <div className="item-header">
@@ -47,7 +53,7 @@ function Item(props) {
       <button className="md-button" onClick={() => push(`/update-item/${item.id}`)}>
         Edit
       </button>
-      <button className="md-button">
+      <button className="md-button" onClick={handleDelete}>
         Delete
       </button>
     </div>
