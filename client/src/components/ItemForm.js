@@ -33,7 +33,7 @@ const ItemForm = props => {
     axios.post('http://localhost:3333/items', item)
       .then(res => {
         props.setItems(res.data)
-        push
+        push('/item-list')
       })
 
   };
