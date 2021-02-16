@@ -17,7 +17,7 @@ const UpdateForm = props => {
 
   useEffect(() => {
     const item = props.items.find(item => item.id == id)
-
+    setItem(item);
   }, [])
 
   const changeHandler = ev => {
