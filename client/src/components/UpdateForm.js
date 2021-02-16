@@ -38,7 +38,7 @@ const UpdateForm = props => {
   };
 
   const handleSubmit = e => {
-    e.preventDefault();
+    // e.preventDefault();
     // make a PUT request to edit the item
   };
 
