@@ -44,6 +44,7 @@ const UpdateForm = props => {
       .then(res => {
         console.log('bk: UpdateForm.js: submit: res: ', res)
         // goBack();
+        props.setItems(res.data)
         push(`/item-list/${id}`)
       })
       .catch(err => console.error(`error saving item: ${id}: `, err.message))
