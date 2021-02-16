@@ -17,7 +17,7 @@ const UpdateForm = props => {
 
   useEffect(() => {
     // const item = props.items.find(item => item.id == id)
-    axios.get(`http://localhost:3333/itemById/id`)
+    axios.get(`http://localhost:3333/itemById/${id}`)
       .then(res => setItem(res.data))
       .catch(err => console.error('unble to rertieve items: ', err.message))
   }, [])
