@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -15,6 +15,14 @@ const UpdateForm = props => {
   const { id } = useParams();
   // const foundItem = props.items.find(itm => itm.id == id)
   const [item, setItem] = useState(initialItem);
+
+  useEffect(() => {
+    axios.get(`http://localhost:3333/itemById/${id}`)
+      .then(res => {
+        setItem(res.data)
+      })
+      .catch(err => console.error(`unable to get item: ${id}: `, err.message))
+  }, []);
 
   const changeHandler = ev => {
     ev.persist();
