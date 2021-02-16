@@ -11,7 +11,7 @@ const initialItem = {
 };
 
 const UpdateForm = props => {
-  const { push } = useHistory();
+  const { push, goBack } = useHistory();
   const { id } = useParams();
   const [item, setItem] = useState(initialItem);
 
@@ -39,7 +39,7 @@ const UpdateForm = props => {
     e.preventDefault();
     // make a PUT request to edit the item
     axios.put(`http://localhost:3333/items/${id}`, item)
-      .then(res => props.history.goBack())
+      .then(res => goBack())
       .catch(err => console.error('unable to update item: ', err.message))
   };
 
