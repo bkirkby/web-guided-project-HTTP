@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import axios from 'axios';
 
 const initialItem = {
@@ -11,6 +12,7 @@ const initialItem = {
 
 const ItemForm = props => {
   const [item, setItem] = useState(initialItem);
+  const { push } = useHistory();
 
   const changeHandler = ev => {
     ev.persist();
@@ -27,6 +29,13 @@ const ItemForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    axios.post('http://localhost:3333/items', item)
+      .then(res => {
+        props.setItems(res.data)
+        push
+      })
+
   };
 
   return (
