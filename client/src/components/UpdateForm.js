@@ -16,10 +16,10 @@ const UpdateForm = props => {
   const [item, setItem] = useState(initialItem);
 
   useEffect(() => {
-    const item = props.items.find(item => item.id == id)
-    if (item) {
-      setItem(item);
-    }
+    // const item = props.items.find(item => item.id == id)
+    axios.get(`http://localhost:3333/itemById/id`)
+      .then(res => setItem(res.data))
+      .catch(err => console.error('unble to rertieve items: ', err.message))
   }, [])
 
   const changeHandler = ev => {
