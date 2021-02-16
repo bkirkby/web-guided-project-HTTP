@@ -12,8 +12,9 @@ const initialItem = {
 
 const UpdateForm = props => {
   const { push } = useHistory();
-  const [item, setItem] = useState(initialItem);
   const { id } = useParams();
+  const item = props.items.find(item => item.id == id)
+  const [item, setItem] = useState(item || initialItem);
 
   const changeHandler = ev => {
     ev.persist();
