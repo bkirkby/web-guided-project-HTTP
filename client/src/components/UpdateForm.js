@@ -38,6 +38,9 @@ const UpdateForm = props => {
   const handleSubmit = e => {
     e.preventDefault();
     // make a PUT request to edit the item
+    axios.put(`http://localhost:3333/items/${id}`, item)
+      .then(res => props.history.goBack())
+      .catch(err => console.error('unable to update item: ', err.message))
   };
 
   return (
