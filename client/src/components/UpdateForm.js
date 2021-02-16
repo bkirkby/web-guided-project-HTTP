@@ -11,7 +11,7 @@ const initialItem = {
 };
 
 const UpdateForm = props => {
-  const { goBack } = useHistory();
+  const { push, goBack } = useHistory();
   const { id } = useParams();
   // const foundItem = props.items.find(itm => itm.id == id)
   const [item, setItem] = useState(initialItem);
@@ -43,7 +43,8 @@ const UpdateForm = props => {
     axios.put(`http://localhost:3333/items/${id}`, item)
       .then(res => {
         console.log('bk: UpdateForm.js: submit: res: ', res)
-        goBack();
+        // goBack();
+        push(`/item-list/${id}`)
       })
       .catch(err => console.error(`error saving item: ${id}: `, err.message))
   };
