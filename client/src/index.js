@@ -49,7 +49,7 @@ const App = () => {
         path="/item-list/:id"
         render={props => <Item {...props} items={items} setItems={setItems} />}
       />
-      <Route path="/item-form" component={ItemForm} setItems={setItems} />
+      <Route path="/item-form" render={(props) => <ItemForm {...props} setItems={setItems} />} />
       <Route
         path="/update-item/:id"
         render={() => <UpdateForm setItems={setItems} />}
