@@ -39,7 +39,6 @@ const App = () => {
           <NavLink to="/item-list">Shop</NavLink>
         </div>
       </nav>
-
       <Route exact path="/" component={Home} />
       <Route
         exact
