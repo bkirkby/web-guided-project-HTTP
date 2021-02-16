@@ -23,6 +23,7 @@ function Item(props) {
     axios.delete(`http://localhost:3333/items/${item.id}`)
       .then(res => {
         console.log('bk: Item.js: handleItemDelete: res: ', res)
+        props.setItems(res.data)
         push(`/item-list`)
       })
       .catch(err => console.error(`unable to delete item: ${item.id}: `, err.message))
