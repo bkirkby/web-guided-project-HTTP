@@ -25,6 +25,15 @@ function Item(props) {
     push(`/update-item/${id}`)
   }
 
+  const handleDelete = e => {
+    e.preventDefault();
+    axios.delete(`http://localhost:3333/${id}`)
+      .then(res => {
+        console.log('bk: Item.jd: handleDelete: res: ', res)
+      })
+      .catch(err => console.error(`unable to delte item ${id}: `, err))
+  }
+
   return (
     <div className="item-wrapper">
       <div className="item-header">
@@ -54,7 +63,7 @@ function Item(props) {
       <button onClick={handleEdit} className="md-button">
         Edit
       </button>
-      <button className="md-button">
+      <button onClick={handleDelete} className="md-button">
         Delete
       </button>
     </div>
