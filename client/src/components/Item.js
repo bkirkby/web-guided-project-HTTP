@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, NavLink, useHistory } from 'react-router-dom';
+import { Route, NavLink, useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import ItemDescription from './ItemDescription';
@@ -7,6 +7,7 @@ import ItemShipping from './ItemShipping';
 
 function Item(props) {
   const { push } = useHistory();
+  const { id } = useParams();
   // same as:
   // const history = useHistory();
   // const push = history.push;
@@ -21,7 +22,7 @@ function Item(props) {
 
   const handleEdit = e => {
     e.preventDefault();
-
+    push(`/update-item/${props.match.params.id}`)
   }
 
   return (
