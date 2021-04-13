@@ -45,7 +45,7 @@ const UpdateForm = props => {
         console.log('bk: items/put: res: ', res)
         const changedItem = res.data.find(item => item.id === id)
         // item
-        setItems(props.items.map(item => {
+        props.setItems(props.items.map(item => {
           if (item.id === changedItem.id) {
             return changedItem;
           }
