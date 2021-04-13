@@ -10,12 +10,18 @@ function Item(props) {
   // same as:
   // const history = useHistory();
   // const push = history.push;
+  // const push = props.history.push;
   const item = props.items.find(
     thing => `${thing.id}` === props.match.params.id
   );
 
   if (!props.items.length || !item) {
     return <h2>Loading item data...</h2>;
+  }
+
+  const handleEdit = e => {
+    e.preventDefault();
+
   }
 
   return (
@@ -44,7 +50,7 @@ function Item(props) {
         path="/item-list/:id/shipping"
         render={props => <ItemShipping {...props} item={item} />}
       />
-      <button className="md-button">
+      <button onClick={handleEdit} className="md-button">
         Edit
       </button>
       <button className="md-button">
