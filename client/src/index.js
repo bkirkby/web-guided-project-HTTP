@@ -26,10 +26,10 @@ const App = () => {
   }, []);
 
   const addItem = item => {
-    setItems({
+    setItems([
       ...items,
       item
-    })
+    ])
   }
 
   return (
