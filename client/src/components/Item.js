@@ -27,7 +27,7 @@ function Item(props) {
 
   const handleDelete = e => {
     e.preventDefault();
-    axios.delete(`http://localhost:3333/${id}`)
+    axios.delete(`http://localhost:3333/items/${id}`)
       .then(res => {
         console.log('bk: Item.jd: handleDelete: res: ', res)
         // update the state
