@@ -40,6 +40,11 @@ const UpdateForm = props => {
   const handleSubmit = e => {
     e.preventDefault();
     // make a PUT request to edit the item
+    axios.put(`http://localhost:3333/items/${id}`, item)
+      .then(res => {
+        console.log('bk: items/put: res: ', res)
+      })
+      .catch(err => console.error(`unable to find item by id ${id}: `, err))
   };
 
   return (
