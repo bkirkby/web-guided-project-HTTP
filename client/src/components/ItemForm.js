@@ -31,6 +31,7 @@ const ItemForm = props => {
       .then(res => {
         // props.setItems
         const newItem = res.data[res.data.length - 1];
+        console.log('bk: ItemForm.js: newItem: ', newItem)
         props.addItem(newItem);
       })
   };
