@@ -52,6 +52,7 @@ const UpdateForm = props => {
           }
           return item;
         }))
+        push(`/item-list/${id}`)
       })
       .catch(err => console.error(`unable to find item by id ${id}: `, err))
   };
