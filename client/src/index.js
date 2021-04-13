@@ -25,6 +25,13 @@ const App = () => {
     getItems();
   }, []);
 
+  const addItem = item => {
+    setItems({
+      ...items,
+      item
+    })
+  }
+
   return (
     <div className="App">
       <nav>
