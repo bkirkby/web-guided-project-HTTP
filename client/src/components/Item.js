@@ -30,6 +30,10 @@ function Item(props) {
     axios.delete(`http://localhost:3333/${id}`)
       .then(res => {
         console.log('bk: Item.jd: handleDelete: res: ', res)
+        // update the state
+        props.setItems(res.data)
+        // redirect
+        push('/item-list')
       })
       .catch(err => console.error(`unable to delte item ${id}: `, err))
   }
