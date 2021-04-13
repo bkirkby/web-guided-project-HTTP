@@ -27,6 +27,12 @@ const ItemForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    axios.post('http://localhost:3333/items')
+      .then(res => {
+        // props.setItems
+        const newItem = res.data[res.data.length - 1];
+        props.addItem(newItem);
+      })
   };
 
   return (
