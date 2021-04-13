@@ -44,7 +44,7 @@ const UpdateForm = props => {
       .then(res => {
         console.log('bk: items/put: res: ', res)
         const changedItem = res.data.find(item => {
-          item.id == id
+          '' + item.id == id
         })
         console.log('bk: changedItem: ', changedItem)
         // item
