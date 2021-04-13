@@ -18,7 +18,7 @@ const UpdateForm = props => {
   useEffect(() => {
     axios.get(`http://localhost:3333/itemById/${id}`)
       .then(res => {
-
+        console.log('bk: UpdateForm.js: useEffect: res: ', res)
       })
       .catch(err => console.error(`unable to retrieve itemById: ${id}`))
   }, []);
