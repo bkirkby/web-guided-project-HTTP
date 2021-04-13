@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import axios from 'axios';
 
 const initialItem = {
@@ -11,6 +12,7 @@ const initialItem = {
 
 const ItemForm = props => {
   const [item, setItem] = useState(initialItem);
+  const { push } = useHistory();
 
   const changeHandler = ev => {
     ev.persist();
@@ -33,6 +35,7 @@ const ItemForm = props => {
         const newItem = res.data[res.data.length - 1];
         // console.log('bk: ItemForm.js: newItem: ', newItem)
         props.addItem(newItem);
+        push(`/item-list`);
       })
   };
 
