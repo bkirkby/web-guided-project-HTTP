@@ -29,10 +29,10 @@ const ItemForm = props => {
     e.preventDefault();
     axios.post('http://localhost:3333/items', item)
       .then(res => {
-        props.setItems(res.data)
-        // const newItem = res.data[res.data.length - 1];
+        // props.setItems(res.data)
+        const newItem = res.data[res.data.length - 1];
         // console.log('bk: ItemForm.js: newItem: ', newItem)
-        // props.addItem(newItem);
+        props.addItem(newItem);
       })
   };
 
