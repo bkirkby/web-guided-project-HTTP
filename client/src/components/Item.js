@@ -22,7 +22,7 @@ function Item(props) {
 
   const handleEdit = e => {
     e.preventDefault();
-    push(`/update-item/${props.match.params.id}`)
+    push(`/update-item/${id}`)
   }
 
   return (
