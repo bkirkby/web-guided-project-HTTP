@@ -43,6 +43,7 @@ const UpdateForm = props => {
     axios.put(`http://localhost:3333/items/${id}`, item)
       .then(res => {
         console.log('bk: items/put: res: ', res)
+        props.setItems(res.data)
       })
       .catch(err => console.error(`unable to find item by id ${id}: `, err))
   };
