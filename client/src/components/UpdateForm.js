@@ -21,7 +21,7 @@ const UpdateForm = props => {
         console.log('bk: UpdateForm.js: useEffect: res: ', res)
         setItem(res.data);
       })
-      .catch(err => console.error(`unable to retrieve itemById: ${id}`))
+      .catch(err => console.error(`unable to retrieve itemById: ${id}`, err))
   }, []);
 
   const changeHandler = ev => {
